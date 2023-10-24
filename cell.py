@@ -30,6 +30,10 @@ class Cell:
         end_x = to_cell.p1.x + ((to_cell.p2.x - to_cell.p1.x) / 2)
         end_y = to_cell.p1.y - ((to_cell.p1.y - to_cell.p2.y) / 2)
 
-        move = Line(Point(start_x, start_y), Point(end_x, end_y))
-        self._win.draw_move(move, "gray" if undo else "red")
+        color = "gray" if undo else "red"
+        
+        line = Line(Point(start_x, start_y), Point(end_x, start_y))
+        self._win.draw_line(line, color)
+        line = Line(Point(end_x, start_y), Point(end_x, end_y))
+        self._win.draw_line(line, color)
 

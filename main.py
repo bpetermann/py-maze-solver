@@ -11,10 +11,9 @@ def main():
     c3 = Cell(win, Point(500, 100), Point(550, 50))
     c3.draw()
 
+
     c1.draw_move(c2)
     c2.draw_move(c3)
-    c3.draw_move(c1)
-
 
     win.wait_for_close()
 
