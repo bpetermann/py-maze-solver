@@ -23,3 +23,13 @@ class Cell:
         if self.has_left_wall:
             line = Line(Point(self.p1.x, self.p2.y), Point(self.p1.x, self.p1.y))
             self._win.draw_line(line)
+
+    def draw_move(self, to_cell, undo=False):
+        start_x = self.p1.x + ((self.p2.x - self.p1.x) / 2)
+        start_y = self.p1.y - ((self.p1.y - self.p2.y) / 2) 
+        end_x = to_cell.p1.x + ((to_cell.p2.x - to_cell.p1.x) / 2)
+        end_y = to_cell.p1.y - ((to_cell.p1.y - to_cell.p2.y) / 2)
+
+        move = Line(Point(start_x, start_y), Point(end_x, end_y))
+        self._win.draw_move(move, "gray" if undo else "red")
+

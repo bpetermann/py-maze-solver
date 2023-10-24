@@ -4,9 +4,16 @@ from cell import Cell
 def main():
     win = Window(800, 600)
 
-    c = Cell(win, Point(225, 225), Point(250, 250))
-    c.has_bottom_wall = False
-    c.draw()
+    c1 = Cell(win, Point(100, 100), Point(150, 50))
+    c1.draw()
+    c2 = Cell(win, Point(300, 300), Point(350, 250))
+    c2.draw()
+    c3 = Cell(win, Point(500, 100), Point(550, 50))
+    c3.draw()
+
+    c1.draw_move(c2)
+    c2.draw_move(c3)
+    c3.draw_move(c1)
 
 
     win.wait_for_close()
