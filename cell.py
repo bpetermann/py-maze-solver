@@ -1,5 +1,4 @@
 from graphics import Line, Point
-
 class Cell:
     def __init__(self, p1, p2, win = None ):
         self.has_left_wall = True
@@ -9,6 +8,7 @@ class Cell:
         self.p1 = p1
         self.p2 = p2
         self._win = win
+        self.visited = False
 
     def draw(self):
         if self._win is None:
@@ -40,4 +40,6 @@ class Cell:
         self._win.draw_line(line, color)
         line = Line(Point(end_x, start_y), Point(end_x, end_y))
         self._win.draw_line(line, color)
+
+ 
 
